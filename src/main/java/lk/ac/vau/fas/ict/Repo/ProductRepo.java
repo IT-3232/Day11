@@ -15,4 +15,8 @@ public interface ProductRepo extends JpaRepository<Product, Integer> {
 	@Query("Select p.name from Categorey c join c.products p where c.id=?1")
 	public List<String> filterbycategorey(int id);
 	
+	//Q2
+	@Query("Select p.name from Seller s join s.products p where LOWER(s.address) LIKE LOWER(CONCAT('%', ?1, '%'))")
+	public List<String> filterbyDistrict(String name);
+	
 }

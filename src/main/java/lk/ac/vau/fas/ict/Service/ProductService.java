@@ -18,5 +18,7 @@ public class ProductService {
 		return repo.filterbycategorey(id);
 	}
 	
-	
+	public List<String> productByDistrict(String name){
+		return repo.filterbyDistrict(name);
+	}
 }
